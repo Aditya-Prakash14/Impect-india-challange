@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact India Challenge - One Week. One Problem. One Impact.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="iis.png" alt="Impact India Challenge Logo" class="logo-image">
+                <h2>Impact India Challenge</h2>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#timeline" class="nav-link">Timeline</a>
+                <a href="#rules" class="nav-link">Rules</a>
+                <a href="#problems" class="nav-link">Problems</a>
+                <a href="#judging" class="nav-link">Judging</a>
+                <a href="register.html" class="nav-link">Register</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-background">
+            <div class="hero-particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+        
+        <!-- Hero Content Container -->
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>India's Premier Innovation Challenge</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line-1">Impact India</span>
+                    <span class="title-line-2">Challenge</span>
+                </h1>
+                <p class="hero-tagline">
+                    <span class="tagline-word">One Week.</span>
+                    <span class="tagline-word">One Problem.</span>
+                    <span class="tagline-word">One Impact.</span>
+                </p>
+                <p class="hero-description">
+                    Join India's most innovative problem-solving challenge where brilliant minds come together to create real-world solutions that matter
+                </p>
+                
+                <!-- Hero Stats -->
+                <div class="hero-stats">
+                    
+                    <div class="hero-stat">
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">Days</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Impact</span>
+                    </div>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="hero-cta-group">
+                    <button class="cta-button primary" onclick="window.location.href='register.html'">
+                        <span>Register Now</span>
+                        <i class="fas fa-rocket"></i>
+                    </button>
+                    <button class="cta-button secondary" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Hero Visual Elements -->
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <img src="myScheme-565x495-New.png" alt="Impact India Challenge - Innovation and Technology" class="hero-image">
+                </div>
+            </div>
+        </div> 
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2>About the Event</h2>
+                <p>Empowering India's brightest minds to solve real-world challenges</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Transform Ideas into Impact</h3>
+                    <p>Impact India Challenge is a week-long innovation marathon designed to harness the creative potential of India's youth. Participants work in teams to identify, analyze, and develop solutions for pressing societal challenges.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h4>1000+</h4>
+                            <p>Participants</p>
+                        </div>
+                        <div class="stat">
+                            <h4>50+</h4>
+                            <p>Teams</p>
+                        </div>
+                        <div class="stat">
+                            <h4>₹5L+</h4>
+                            <p>Prize Pool</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-illustration">
+                    <div class="illustration-card">
+                        <i class="fas fa-brain"></i>
+                        <h4>Innovate</h4>
+                        <p>Think beyond boundaries</p>
+                    </div>
+                    <div class="illustration-card">
+                        <i class="fas fa-hands-helping"></i>
+                        <h4>Collaborate</h4>
+                        <p>Work with diverse minds</p>
+                    </div>
+                    <div class="illustration-card">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Impact</h4>
+                        <p>Create lasting change</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2>Event Timeline</h2>
+                <p>Seven days of innovation and collaboration</p>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-flag-checkered"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Day 1</h3>
+                        <h4>Kickoff & Problem Release</h4>
+                        <p>Event inauguration, team formation, and problem statements revealed</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Day 2-3</h3>
+                        <h4>Research & Ideation</h4>
+                        <p>Deep dive into problem analysis and solution brainstorming</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Day 4-5</h3>
+                        <h4>Development</h4>
+                        <p>Build prototypes, develop solutions, and create presentations</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-presentation"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Day 6</h3>
+                        <h4>Pitch & Demo</h4>
+                        <p>Present solutions to expert judges and industry mentors</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Day 7</h3>
+                        <h4>Results & Awards</h4>
+                        <p>Winner announcement and celebration ceremony</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section id="rules" class="rules fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2>Rules & Guidelines</h2>
+                <p>Fair play for maximum impact</p>
+            </div>
+            <div class="rules-grid">
+                <div class="rule-card">
+                    <div class="rule-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Team Formation</h3>
+                    <p>Teams of 3-5 members. Cross-disciplinary collaboration encouraged.</p>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Time Limit</h3>
+                    <p>7 days from problem release to final submission deadline.</p>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Originality</h3>
+                    <p>All solutions must be original work created during the challenge.</p>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Fair Play</h3>
+                    <p>Respect, collaboration, and ethical conduct are mandatory.</p>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Documentation</h3>
+                    <p>Complete documentation and demo video required for submission.</p>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Eligibility</h3>
+                    <p>Open to students and young professionals aged 18-28.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Statements Section -->
+    <section id="problems" class="problems fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2>Problem Statements</h2>
+                <p>Real challenges. Real solutions. Real impact.</p>
+            </div>
+            <div class="problems-container">
+                <div class="coming-soon-overlay">
+                    <div class="coming-soon-content">
+                        <i class="fas fa-lock"></i>
+                        <h3>Coming Soon</h3>
+                        <p>Problem statements will be revealed on Day 1 of the challenge</p>
+                        <div class="countdown" id="countdown">
+                            <div class="countdown-item">
+                                <span id="days">00</span>
+                                <label>Days</label>
+                            </div>
+                            <div class="countdown-item">
+                                <span id="hours">00</span>
+                                <label>Hours</label>
+                            </div>
+                            <div class="countdown-item">
+                                <span id="minutes">00</span>
+                                <label>Minutes</label>
+                            </div>
+                            <div class="countdown-item">
+                                <span id="seconds">00</span>
+                                <label>Seconds</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Judging Criteria Section -->
+    <section id="judging" class="judging fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2>Judging Criteria</h2>
+                <p>Excellence evaluated across multiple dimensions</p>
+            </div>
+            <div class="judging-grid">
+                <div class="criteria-card">
+                    <div class="criteria-circle" data-percentage="30">
+                        <div class="circle-progress">
+                            <span class="percentage">30%</span>
+                        </div>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>Creativity and uniqueness of the solution approach</p>
+                </div>
+                <div class="criteria-card">
+                    <div class="criteria-circle" data-percentage="25">
+                        <div class="circle-progress">
+                            <span class="percentage">25%</span>
+                        </div>
+                    </div>
+                    <h3>Feasibility</h3>
+                    <p>Practical implementation and scalability potential</p>
+                </div>
+                <div class="criteria-card">
+                    <div class="criteria-circle" data-percentage="25">
+                        <div class="circle-progress">
+                            <span class="percentage">25%</span>
+                        </div>
+                    </div>
+                    <h3>Impact</h3>
+                    <p>Social impact and problem-solving effectiveness</p>
+                </div>
+                <div class="criteria-card">
+                    <div class="criteria-circle" data-percentage="20">
+                        <div class="circle-progress">
+                            <span class="percentage">20%</span>
+                        </div>
+                    </div>
+                    <h3>Presentation</h3>
+                    <p>Quality of pitch, demo, and documentation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Have questions? We're here to help!</p>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@impactindiachallenge.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 98765 43210</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>New Delhi, India</span>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Impact India Challenge</h3>
+                    <p>One Week. One Problem. One Impact.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#rules">Rules</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Impact India Challenge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Impact India Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="register.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="iis.png" alt="Impact India Challenge Logo" class="logo-image">
+                <h2>Impact India Challenge</h2>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#timeline" class="nav-link">Timeline</a>
+                <a href="index.html#rules" class="nav-link">Rules</a>
+                <a href="index.html#problems" class="nav-link">Problems</a>
+                <a href="index.html#judging" class="nav-link">Judging</a>
+                <a href="register.html" class="nav-link active">Register</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Header -->
+    <section class="register-hero">
+        <div class="container">
+            <div class="register-hero-content">
+                <h1>Team Registration</h1>
+                <p>Join the Impact India Challenge and make a difference. Register your team of 4 members below.</p>
+                <div class="registration-steps">
+                    <div class="step active">
+                        <div class="step-number">1</div>
+                        <span>Team Details</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <span>Team Members</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <span>Confirmation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="register-form-section">
+        <div class="container">
+            <div class="registration-container">
+                <div class="form-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text">Step <span id="currentStep">1</span> of 3</div>
+                </div>
+
+                <form id="teamRegistrationForm" class="registration-form">
+                    <!-- Step 1: Team Details -->
+                    <div class="form-step active" data-step="1">
+                        <h2>Team Information</h2>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <input type="text" id="teamName" name="teamName" required>
+                                <label for="teamName">Team Name *</label>
+                                <span class="error-message" id="teamNameError"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="teamEmail" name="teamEmail" required>
+                                <label for="teamEmail">Team Contact Email *</label>
+                                <span class="error-message" id="teamEmailError"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="teamPhone" name="teamPhone" required>
+                                <label for="teamPhone">Team Contact Phone *</label>
+                                <span class="error-message" id="teamPhoneError"></span>
+                            </div>
+                        </div>
+                        <div class="form-navigation">
+                            <button type="button" class="btn-next" onclick="nextStep()">
+                                <span>Next</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Team Members -->
+                    <div class="form-step" data-step="2">
+                        <h2>Team Members (4 Required)</h2>
+                        
+                        <!-- Team Member 1 -->
+                        <div class="member-card">
+                            <h3><i class="fas fa-user"></i> Member 1 (Team Leader)</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <input type="text" id="member1Name" name="member1Name" required>
+                                    <label for="member1Name">Full Name *</label>
+                                    <span class="error-message" id="member1NameError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="member1Email" name="member1Email" required>
+                                    <label for="member1Email">Email *</label>
+                                    <span class="error-message" id="member1EmailError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" id="member1Phone" name="member1Phone" required>
+                                    <label for="member1Phone">Phone Number *</label>
+                                    <span class="error-message" id="member1PhoneError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <select id="member1Year" name="member1Year" required>
+                                        <option value="">Select Year *</option>
+                                        <option value="1st Year">1st Year</option>
+                                        <option value="2nd Year">2nd Year</option>
+                                        <option value="3rd Year">3rd Year</option>
+                                        <option value="4th Year">4th Year</option>
+                                        <option value="Graduate">Graduate</option>
+                                        <option value="Postgraduate">Postgraduate</option>
+                                        <option value="Working Professional">Working Professional</option>
+                                    </select>
+                                    <span class="error-message" id="member1YearError"></span>
+                                </div>
+                                <div class="form-group full-width">
+                                    <input type="text" id="member1College" name="member1College" required>
+                                    <label for="member1College">College/Institution *</label>
+                                    <span class="error-message" id="member1CollegeError"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Team Member 2 -->
+                        <div class="member-card">
+                            <h3><i class="fas fa-user"></i> Member 2</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <input type="text" id="member2Name" name="member2Name" required>
+                                    <label for="member2Name">Full Name *</label>
+                                    <span class="error-message" id="member2NameError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="member2Email" name="member2Email" required>
+                                    <label for="member2Email">Email *</label>
+                                    <span class="error-message" id="member2EmailError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" id="member2Phone" name="member2Phone" required>
+                                    <label for="member2Phone">Phone Number *</label>
+                                    <span class="error-message" id="member2PhoneError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <select id="member2Year" name="member2Year" required>
+                                        <option value="">Select Year *</option>
+                                        <option value="1st Year">1st Year</option>
+                                        <option value="2nd Year">2nd Year</option>
+                                        <option value="3rd Year">3rd Year</option>
+                                        <option value="4th Year">4th Year</option>
+                                        <option value="Graduate">Graduate</option>
+                                        <option value="Postgraduate">Postgraduate</option>
+                                        <option value="Working Professional">Working Professional</option>
+                                    </select>
+                                    <span class="error-message" id="member2YearError"></span>
+                                </div>
+                                <div class="form-group full-width">
+                                    <input type="text" id="member2College" name="member2College" required>
+                                    <label for="member2College">College/Institution *</label>
+                                    <span class="error-message" id="member2CollegeError"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Team Member 3 -->
+                        <div class="member-card">
+                            <h3><i class="fas fa-user"></i> Member 3</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <input type="text" id="member3Name" name="member3Name" required>
+                                    <label for="member3Name">Full Name *</label>
+                                    <span class="error-message" id="member3NameError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="member3Email" name="member3Email" required>
+                                    <label for="member3Email">Email *</label>
+                                    <span class="error-message" id="member3EmailError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" id="member3Phone" name="member3Phone" required>
+                                    <label for="member3Phone">Phone Number *</label>
+                                    <span class="error-message" id="member3PhoneError"></span>
+                                </div>
+                                                                <div class="form-group">
+                                    <select id="member3Year" name="member3Year" required>
+                                        <option value="">Select Year *</option>
+                                        <option value="1st Year">1st Year</option>
+                                        <option value="2nd Year">2nd Year</option>
+                                        <option value="3rd Year">3rd Year</option>
+                                        <option value="4th Year">4th Year</option>
+                                        <option value="Graduate">Graduate</option>
+                                        <option value="Postgraduate">Postgraduate</option>
+                                        <option value="Working Professional">Working Professional</option>
+                                    </select>
+                                    <span class="error-message" id="member3YearError"></span>
+                                </div>
+                                <div class="form-group full-width">
+                                    <input type="text" id="member3College" name="member3College" required>
+                                    <label for="member3College">College/Institution *</label>
+                                    <span class="error-message" id="member3CollegeError"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Team Member 4 -->
+                        <div class="member-card">
+                            <h3><i class="fas fa-user"></i> Member 4</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <input type="text" id="member4Name" name="member4Name" required>
+                                    <label for="member4Name">Full Name *</label>
+                                    <span class="error-message" id="member4NameError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="member4Email" name="member4Email" required>
+                                    <label for="member4Email">Email *</label>
+                                    <span class="error-message" id="member4EmailError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" id="member4Phone" name="member4Phone" required>
+                                    <label for="member4Phone">Phone Number *</label>
+                                    <span class="error-message" id="member4PhoneError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <select id="member4Year" name="member4Year" required>
+                                        <option value="">Select Year *</option>
+                                        <option value="1st Year">1st Year</option>
+                                        <option value="2nd Year">2nd Year</option>
+                                        <option value="3rd Year">3rd Year</option>
+                                        <option value="4th Year">4th Year</option>
+                                        <option value="Graduate">Graduate</option>
+                                        <option value="Postgraduate">Postgraduate</option>
+                                        <option value="Working Professional">Working Professional</option>
+                                    </select>
+                                    <span class="error-message" id="member4YearError"></span>
+                                </div>
+                                <div class="form-group full-width">
+                                    <input type="text" id="member4College" name="member4College" required>
+                                    <label for="member4College">College/Institution *</label>
+                                    <span class="error-message" id="member4CollegeError"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="btn-prev" onclick="prevStep()">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Previous</span>
+                            </button>
+                            <button type="button" class="btn-next" onclick="nextStep()">
+                                <span>Next</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Confirmation -->
+                    <div class="form-step" data-step="3">
+                        <h2>Confirm Registration</h2>
+                        <div class="confirmation-summary">
+                            <div class="summary-card">
+                                <h3><i class="fas fa-users"></i> Team Summary</h3>
+                                <div id="teamSummary"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="terms-agreement">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="termsAgreed" name="termsAgreed" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#" target="_blank">Terms and Conditions</a> and confirm that all information provided is accurate.
+                            </label>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="btn-prev" onclick="prevStep()">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Previous</span>
+                            </button>
+                            <button type="submit" class="btn-submit" id="submitBtn">
+                                <span>Register Team</span>
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-check-circle"></i>
+                <h2>Registration Successful!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Your team has been successfully registered for the Impact India Challenge.</p>
+                <p>You will receive a confirmation email shortly with further details.</p>
+                <div class="registration-id">
+                    <strong>Registration ID: </strong><span id="registrationId"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal" onclick="closeModal()">Close</button>
+                <button class="btn-modal primary" onclick="window.location.href='index.html'">Go to Homepage</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="register.js"></script>
+    <script>
+        // Mobile navigation toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

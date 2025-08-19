@@ -256,43 +256,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start typing effect after hero animation
     setTimeout(typingEffect, 1000);
 
-    // Statistics counter animation
-    function animateCounters() {
-        const counters = document.querySelectorAll('.stat h4');
-        
-        const counterObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = entry.target;
-                    const text = target.textContent;
-                    const number = parseInt(text.replace(/\D/g, ''));
-                    const suffix = text.replace(/\d/g, '');
-                    
-                    let current = 0;
-                    const increment = number / 50;
-                    
-                    const counter = setInterval(() => {
-                        current += increment;
-                        if (current >= number) {
-                            target.textContent = number + suffix;
-                            clearInterval(counter);
-                        } else {
-                            target.textContent = Math.floor(current) + suffix;
-                        }
-                    }, 50);
-                    
-                    counterObserver.unobserve(target);
-                }
-            });
-        });
-        
-        counters.forEach(counter => {
-            counterObserver.observe(counter);
-        });
-    }
-
-    animateCounters();
-
     // Social media click handlers (you can replace with actual URLs)
     document.querySelectorAll('.social-icon').forEach(icon => {
         icon.addEventListener('click', function(e) {

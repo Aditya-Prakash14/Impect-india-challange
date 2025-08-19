@@ -319,35 +319,6 @@ body {
     letter-spacing: -0.01em;
 }
 
-.hero-stats {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    animation: fadeInUp 1s ease-out 1.4s both;
-}
-
-.hero-stat {
-    text-align: center;
-}
-
-.stat-number {
-    display: block;
-    font-family: var(--font-display);
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    font-weight: 800;
-    color: #FFD700;
-    letter-spacing: -0.02em;
-}
-
-.stat-label {
-    font-family: var(--font-body);
-    font-size: 0.9rem;
-    opacity: 0.8;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 500;
-}
-
 .hero-cta-group {
     display: flex;
     gap: 1rem;
@@ -543,30 +514,6 @@ body {
     margin-bottom: 2rem;
     line-height: 1.8;
     font-weight: 400;
-}
-
-.about-stats {
-    display: flex;
-    gap: 2rem;
-}
-
-.stat {
-    text-align: center;
-}
-
-.stat h4 {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    letter-spacing: -0.02em;
-}
-
-.stat p {
-    font-family: var(--font-body);
-    color: var(--text-light);
-    margin: 0;
-    font-weight: 500;
 }
 
 .about-illustration {
@@ -1210,17 +1157,6 @@ body {
         margin-bottom: 1.5rem;
     }
 
-    .hero-stats {
-        gap: 1rem;
-        margin-bottom: 2rem;
-        justify-content: center;
-    }
-
-    .hero-stat {
-        flex: 1;
-        min-width: 80px;
-    }
-
     .hero-cta-group {
         justify-content: center;
         gap: 0.75rem;
@@ -1338,15 +1274,6 @@ body {
     .hero-badge {
         font-size: 0.7rem;
         padding: 0.4rem 0.8rem;
-    }
-
-    .hero-stats {
-        flex-wrap: wrap;
-        gap: 0.75rem;
-    }
-
-    .hero-stat {
-        min-width: 70px;
     }
 
     .hero-cta-group {

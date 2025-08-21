@@ -122,8 +122,8 @@ function validateCurrentStep() {
         } else if (field.type === 'email' && value.indexOf('@') === -1) {
             showError(field, 'Please enter a valid email address');
             isValid = false;
-        } else if (field.type === 'tel' && value.length < 10) {
-            showError(field, 'Please enter a valid phone number');
+        } else if (field.type === 'tel' && !isValidIndianPhone(value)) {
+            showError(field, 'Please enter a valid Indian phone number (10 digits, starts with 6-9)');
             isValid = false;
         }
     });
@@ -153,11 +153,14 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-function isValidPhone(phone) {
-    const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-    const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
-    return phoneRegex.test(cleanPhone) && cleanPhone.length >= 10;
+function isValidIndianPhone(phone) {
+    // Remove all non-digit characters
+    const cleanPhone = phone.replace(/\D/g, '');
+    // Indian mobile numbers: 10 digits, starts with 6-9
+    const regex = /^[6-9]\d{9}$/;
+    return regex.test(cleanPhone);
 }
+
 
 // Helper function to skip validation for testing (remove in production)
 function nextStepNoValidation() {
@@ -389,15 +392,21 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Phone number formatting
+// Phone number formatting - Indian format
 document.addEventListener('input', function(e) {
     if (e.target.type === 'tel') {
         let value = e.target.value.replace(/\D/g, '');
-        if (value.length > 0) {
-            if (value.length <= 10) {
-                value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
-            }
+        
+        // Limit to 10 digits
+        if (value.length > 10) {
+            value = value.substring(0, 10);
         }
+        
+        // Format as Indian phone number: XXXXX XXXXX
+        if (value.length > 5) {
+            value = value.replace(/(\d{5})(\d{1,5})/, '$1 $2');
+        }
+        
         e.target.value = value;
     }
 });

@@ -26,16 +26,60 @@ document.addEventListener('DOMContentLoaded', function() {
     updateProgressBar();
     updateStepIndicators();
     
+    // Setup button event listeners
+    setupButtonEventListeners();
+    
     // Make functions globally accessible for debugging
     window.nextStep = nextStep;
     window.prevStep = prevStep;
     window.validateCurrentStep = validateCurrentStep;
     
+    // Focus first input
+    setTimeout(() => {
+        const firstInput = document.querySelector('.form-step.active input');
+        if (firstInput) {
+            firstInput.focus();
+        }
+    }, 100);
+    
     console.log('Registration form initialized');
 });
 
+// Setup button event listeners
+function setupButtonEventListeners() {
+    // Handle Next buttons
+    document.querySelectorAll('.btn-next').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            nextStep();
+        });
+    });
+    
+    // Handle Previous buttons
+    document.querySelectorAll('.btn-prev').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            prevStep();
+        });
+    });
+
+    // Handle form submission
+    const form = document.getElementById('teamRegistrationForm');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            handleFormSubmit(e);
+        });
+    }
+}
+
 // Navigation functions
-function nextStep() {    
+function nextStep() {
+    console.log('nextStep called, current step:', currentStep);
+    
     if (validateCurrentStep()) {
         if (currentStep < totalSteps) {
             currentStep++;
@@ -47,33 +91,60 @@ function nextStep() {
             if (currentStep === 3) {
                 generateSummary();
             }
+            
+            // Focus first input of new step
+            setTimeout(() => {
+                const firstInput = document.querySelector('.form-step.active input, .form-step.active select');
+                if (firstInput) {
+                    firstInput.focus();
+                }
+            }, 100);
         }
+    } else {
+        console.log('Validation failed for step', currentStep);
     }
 }
 
 function prevStep() {
+    console.log('prevStep called, current step:', currentStep);
+    
     if (currentStep > 1) {
         currentStep--;
         showStep(currentStep);
         updateProgressBar();
         updateStepIndicators();
+        
+        // Focus first input of previous step
+        setTimeout(() => {
+            const firstInput = document.querySelector('.form-step.active input, .form-step.active select');
+            if (firstInput) {
+                firstInput.focus();
+            }
+        }, 100);
     }
 }
 
 function showStep(step) {
+    console.log('Showing step:', step);
+    
     // Hide all steps
     document.querySelectorAll('.form-step').forEach(stepEl => {
         stepEl.classList.remove('active');
+        stepEl.style.display = 'none';
     });
     
     // Show current step
     const currentStepEl = document.querySelector(`[data-step="${step}"]`);
     if (currentStepEl) {
         currentStepEl.classList.add('active');
+        currentStepEl.style.display = 'block';
     }
     
     // Update current step display
-    document.getElementById('currentStep').textContent = step;
+    const currentStepSpan = document.getElementById('currentStep');
+    if (currentStepSpan) {
+        currentStepSpan.textContent = step;
+    }
 }
 
 function updateProgressBar() {
@@ -98,28 +169,26 @@ function validateCurrentStep() {
     const currentStepEl = document.querySelector(`[data-step="${currentStep}"]`);
     
     if (!currentStepEl) {
-        console.error('Current step element not found');
+        console.error('Current step element not found for step:', currentStep);
         return false;
     }
     
     const requiredFields = currentStepEl.querySelectorAll('input[required], select[required]');
     let isValid = true;
 
+    console.log('Validating step', currentStep, 'with', requiredFields.length, 'required fields');
+
     requiredFields.forEach(field => {
-        const errorElement = document.getElementById(field.id + 'Error');
         const value = field.value.trim();
 
         // Clear previous errors
-        if (errorElement) {
-            errorElement.textContent = '';
-        }
-        field.style.borderColor = '#e9ecef';
+        clearFieldError(field);
 
-        // Basic validation - just check if field has some value
+        // Validation logic
         if (!value) {
             showError(field, 'This field is required');
             isValid = false;
-        } else if (field.type === 'email' && value.indexOf('@') === -1) {
+        } else if (field.type === 'email' && !isValidEmail(value)) {
             showError(field, 'Please enter a valid email address');
             isValid = false;
         } else if (field.type === 'tel' && !isValidIndianPhone(value)) {
@@ -137,7 +206,17 @@ function validateCurrentStep() {
         }
     }
 
+    console.log('Step validation result:', isValid);
     return isValid;
+}
+
+function clearFieldError(field) {
+    const errorElement = document.getElementById(field.id + 'Error');
+    if (errorElement) {
+        errorElement.textContent = '';
+    }
+    field.style.borderColor = '#e9ecef';
+    field.classList.remove('error');
 }
 
 function showError(field, message) {
@@ -146,6 +225,12 @@ function showError(field, message) {
         errorElement.textContent = message;
     }
     field.style.borderColor = '#dc3545';
+    field.classList.add('error');
+    
+    // Scroll to first error field
+    if (!document.querySelector('.error')) {
+        field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 }
 
 function isValidEmail(email) {
@@ -213,20 +298,35 @@ function generateSummary() {
     summaryContainer.innerHTML = summaryHTML;
 }
 
-// Form submission
-document.getElementById('teamRegistrationForm').addEventListener('submit', async function(e) {
+// Form submission handler
+function handleFormSubmit(e) {
     e.preventDefault();
+    e.stopPropagation();
+    
+    console.log('Form submission triggered');
     
     if (!validateCurrentStep()) {
-        return;
+        console.log('Form validation failed');
+        return false;
     }
 
+    submitForm();
+    return false;
+}
+
+// Submit form function
+async function submitForm() {
     const submitBtn = document.getElementById('submitBtn');
-    submitBtn.classList.add('loading');
-    submitBtn.disabled = true;
+    if (submitBtn) {
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+    }
 
     try {
-        const formData = new FormData(this);
+        const form = document.getElementById('teamRegistrationForm');
+        const formData = new FormData(form);
+        
         const registrationData = {
             team_name: formData.get('teamName'),
             team_email: formData.get('teamEmail'),
@@ -247,6 +347,8 @@ document.getElementById('teamRegistrationForm').addEventListener('submit', async
             });
         }
 
+        console.log('Submitting registration data:', registrationData);
+
         // Submit to Supabase (or fallback if not configured)
         const result = supabase ? 
             await submitRegistration(registrationData) : 
@@ -262,10 +364,13 @@ document.getElementById('teamRegistrationForm').addEventListener('submit', async
         console.error('Registration error:', error);
         alert('Registration failed. Please try again. Error: ' + error.message);
     } finally {
-        submitBtn.classList.remove('loading');
-        submitBtn.disabled = false;
+        if (submitBtn) {
+            submitBtn.classList.remove('loading');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit Registration';
+        }
     }
-});
+}
 
 // Supabase submission function
 async function submitRegistration(data) {
@@ -354,14 +459,6 @@ window.onclick = function(event) {
     }
 }
 
-// Auto-focus first input on page load
-document.addEventListener('DOMContentLoaded', function() {
-    const firstInput = document.querySelector('.form-step.active input');
-    if (firstInput) {
-        firstInput.focus();
-    }
-});
-
 // Real-time validation
 document.addEventListener('input', function(e) {
     if (e.target.matches('input[required], select[required]')) {
@@ -374,12 +471,18 @@ document.addEventListener('input', function(e) {
     }
 });
 
-// Prevent form submission on Enter key (except on submit button)
+// Prevent form auto-refresh on Enter key
 document.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' && e.target.type !== 'submit') {
+    if (e.key === 'Enter') {
         e.preventDefault();
         
-        // Move to next field or next step
+        // If we're on a button, trigger its click
+        if (e.target.type === 'submit' || e.target.classList.contains('btn-next')) {
+            e.target.click();
+            return;
+        }
+        
+        // Otherwise, move to next field or next step
         const currentStepEl = document.querySelector(`[data-step="${currentStep}"]`);
         const inputs = Array.from(currentStepEl.querySelectorAll('input, select'));
         const currentIndex = inputs.indexOf(e.target);
@@ -388,6 +491,12 @@ document.addEventListener('keydown', function(e) {
             inputs[currentIndex + 1].focus();
         } else if (currentStep < totalSteps) {
             nextStep();
+        } else if (currentStep === totalSteps) {
+            // On final step, submit the form
+            const form = document.getElementById('teamRegistrationForm');
+            if (form) {
+                handleFormSubmit(e);
+            }
         }
     }
 });
@@ -466,23 +575,3 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
-
-// Additional initialization to ensure buttons work
-document.addEventListener('DOMContentLoaded', function() {
-    // Add event listeners to all next and prev buttons as backup
-    document.querySelectorAll('.btn-next').forEach(btn => {
-        btn.addEventListener('click', nextStep);
-    });
-    
-    document.querySelectorAll('.btn-prev').forEach(btn => {
-        btn.addEventListener('click', prevStep);
-    });
-    
-    // Focus first input
-    setTimeout(() => {
-        const firstInput = document.querySelector('.form-step.active input');
-        if (firstInput) {
-            firstInput.focus();
-        }
-    }, 100);
-});

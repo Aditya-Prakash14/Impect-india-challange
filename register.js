@@ -1,5 +1,9 @@
 // Registration Form JavaScript
 
+// *** COUNTDOWN DATE CONFIGURATION ***
+// This should match the date in script.js
+const EVENT_START_DATE = "2025-08-25 00:00:00"; // August 25, 2025 at midnight IST
+
 // Supabase configuration (replace with your actual Supabase URL and anon key)
 const SUPABASE_URL = 'https://vopdethbacjlqxoawtpv.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZvcGRldGhiYWNqbHF4b2F3dHB2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU1ODc1MzgsImV4cCI6MjA3MTE2MzUzOH0.IQGf2DUx9YNosI-_AAXsQkQN6y6-lKtBmTpNofAEcDI';
@@ -20,6 +24,12 @@ const totalSteps = 3;
 
 // Initialize the form
 document.addEventListener('DOMContentLoaded', function() {
+    // Check if registration should be disabled
+    if (checkRegistrationDisabled()) {
+        showRegistrationDisabledOverlay();
+        return;
+    }
+    
     // Ensure we start on step 1
     currentStep = 1;
     showStep(currentStep);
@@ -574,4 +584,44 @@ function debounce(func, wait) {
         clearTimeout(timeout);
         timeout = setTimeout(later, wait);
     };
+}
+
+// Check if registration should be disabled
+function checkRegistrationDisabled() {
+    const eventStarted = localStorage.getItem('impactIndiaEventStarted');
+    const eventDate = new Date(EVENT_START_DATE.replace(' ', 'T') + '+05:30');
+    const countDownDate = eventDate.getTime();
+    const now = new Date().getTime();
+    
+    console.log('Registration check - Event date:', eventDate, 'Now:', new Date());
+    
+    return eventStarted === 'true' || now >= countDownDate;
+}
+
+// Show registration disabled overlay
+function showRegistrationDisabledOverlay() {
+    const overlay = document.createElement('div');
+    overlay.className = 'registration-disabled-overlay';
+    overlay.innerHTML = `
+        <div class="registration-disabled-content">
+            <i class="fas fa-lock"></i>
+            <h2>Registration Closed</h2>
+            <p>Registration for the Impact India Challenge has been closed as the event has officially started. Problem statements are now live!</p>
+            <button class="go-back-btn" onclick="goBackToHome()">
+                <i class="fas fa-home"></i> View Problem Statements
+            </button>
+        </div>
+    `;
+    
+    document.body.appendChild(overlay);
+    
+    // Animate in
+    setTimeout(() => {
+        overlay.style.opacity = '1';
+    }, 100);
+}
+
+// Go back to home page
+function goBackToHome() {
+    window.location.href = 'index.html#problems';
 }

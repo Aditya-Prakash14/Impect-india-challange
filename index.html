@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impact India Challenge - One Week. One Problem. One Impact.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -21,12 +25,12 @@
             <div class="nav-menu" id="navMenu">
                 <a href="#hero" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
-                
+
                 <a href="#rules" class="nav-link">Rules</a>
                 <a href="#problems" class="nav-link">Problems</a>
-                
+
                 <a href="register.html" class="nav-link">Register</a>
-                
+
             </div>
             <div class="nav-toggle" id="navToggle">
                 <span class="bar"></span>
@@ -51,7 +55,7 @@
             </div>
         </div>
         <div class="hero-overlay"></div>
-        
+
         <!-- Hero Content Container -->
         <div class="hero-container">
             <div class="hero-content">
@@ -69,30 +73,33 @@
                     <span class="tagline-word">One Impact.</span>
                 </p>
                 <p class="hero-description">
-                    Join India's most innovative problem-solving challenge where brilliant minds come together to create real-world solutions that matter
+                    Join India's most innovative problem-solving challenge where brilliant minds come together to create
+                    real-world solutions that matter
                 </p>
-                
+
                 <!-- CTA Buttons -->
                 <div class="hero-cta-group">
                     <button class="cta-button primary" onclick="window.location.href='register.html'">
                         <span>Register Now</span>
                         <i class="fas fa-rocket"></i>
                     </button>
-                    <button class="cta-button secondary" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+                    <button class="cta-button secondary"
+                        onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
                         <span>Learn More</span>
                         <i class="fas fa-arrow-down"></i>
                     </button>
                 </div>
             </div>
-            
+
             <!-- Hero Visual Elements -->
             <div class="hero-visual">
                 <div class="hero-image-container">
-                    <img src="myScheme-565x495-New.png" alt="Impact India Challenge - Innovation and Technology" class="hero-image">
+                    <img src="myScheme-565x495-New.png" alt="Impact India Challenge - Innovation and Technology"
+                        class="hero-image">
                 </div>
             </div>
-        </div> 
-        
+        </div>
+
         <!-- Scroll Indicator -->
         <div class="scroll-indicator">
             <div class="scroll-arrow">
@@ -112,7 +119,9 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Transform Ideas into Impact</h3>
-                    <p>Impact India Challenge is a week-long innovation marathon designed to harness the creative potential of India's youth. Participants work in teams to identify, analyze, and develop solutions for pressing societal challenges.</p>
+                    <p>Impact India Challenge is a week-long innovation marathon designed to harness the creative
+                        potential of India's youth. Participants work in teams to identify, analyze, and develop
+                        solutions for pressing societal challenges.</p>
                 </div>
                 <div class="about-illustration">
                     <div class="illustration-card">
@@ -238,7 +247,7 @@
                 <p>Real challenges. Real solutions. Real impact.</p>
             </div>
             <div class="problems-container">
-                <div class="coming-soon-overlay">
+                <div class="coming-soon-overlay" id="comingSoonOverlay">
                     <div class="coming-soon-content">
                         <i class="fas fa-lock"></i>
                         <h3>Coming Soon</h3>
@@ -259,6 +268,160 @@
                             <div class="countdown-item">
                                 <span id="seconds">00</span>
                                 <label>Seconds</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem Statements Grid (initially hidden) -->
+                <div class="problem-statements-grid" id="problemStatementsGrid" style="display: none;">
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <div class="problem-number">01</div>
+                            <div class="problem-category">Education Technology</div>
+                        </div>
+                        <h3 class="problem-title">Smart Scholarship Navigator for Underprivileged Students</h3>
+                        <div class="problem-content">
+                            <div class="problem-section">
+                                <h4><i class="fas fa-info-circle"></i> Background</h4>
+                                <p>Many rural and underprivileged students miss out on scholarships due to poor
+                                    awareness and complex procedures.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-question-circle"></i> Problem</h4>
+                                <p>How can students easily discover and apply for government/private scholarships
+                                    relevant to their profiles?</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-target"></i> Expected Outcome</h4>
+                                <p>An AI-powered scholarship portal that matches student profiles with available
+                                    scholarships and guides step-by-step application in regional languages.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-chart-line"></i> Impact</h4>
+                                <p>Boosts education access, minimizes dropouts, and supports talent in rural areas.</p>
+                            </div>
+                        </div>
+                        <div class="problem-footer">
+                            <div class="difficulty-badge medium">Medium</div>
+                            <div class="domain-tags">
+                                <span class="tag">AI/ML</span>
+                                <span class="tag">Web Dev</span>
+                                <span class="tag">NLP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <div class="problem-number">02</div>
+                            <div class="problem-category">Healthcare Innovation</div>
+                        </div>
+                        <h3 class="problem-title">Rural Health Monitoring System</h3>
+                        <div class="problem-content">
+                            <div class="problem-section">
+                                <h4><i class="fas fa-info-circle"></i> Background</h4>
+                                <p>Remote villages lack proper healthcare infrastructure and monitoring systems, leading
+                                    to delayed medical interventions.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-question-circle"></i> Problem</h4>
+                                <p>How can we create an affordable, scalable health monitoring system for rural
+                                    communities?</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-target"></i> Expected Outcome</h4>
+                                <p>A low-cost IoT-based health monitoring solution with telemedicine capabilities and
+                                    emergency alert systems.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-chart-line"></i> Impact</h4>
+                                <p>Improves healthcare access, enables early disease detection, and saves lives in rural
+                                    areas.</p>
+                            </div>
+                        </div>
+                        <div class="problem-footer">
+                            <div class="difficulty-badge hard">Hard</div>
+                            <div class="domain-tags">
+                                <span class="tag">IoT</span>
+                                <span class="tag">Healthcare</span>
+                                <span class="tag">Mobile App</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <div class="problem-number">03</div>
+                            <div class="problem-category">Environmental Solutions</div>
+                        </div>
+                        <h3 class="problem-title">Smart Waste Management for Urban Areas</h3>
+                        <div class="problem-content">
+                            <div class="problem-section">
+                                <h4><i class="fas fa-info-circle"></i> Background</h4>
+                                <p>Urban areas struggle with inefficient waste collection, leading to overflow bins and
+                                    environmental pollution.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-question-circle"></i> Problem</h4>
+                                <p>How can cities optimize waste collection routes and schedules using real-time data?
+                                </p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-target"></i> Expected Outcome</h4>
+                                <p>An intelligent waste management system with sensor-based monitoring and route
+                                    optimization for collection vehicles.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-chart-line"></i> Impact</h4>
+                                <p>Reduces pollution, optimizes resource utilization, and creates cleaner urban
+                                    environments.</p>
+                            </div>
+                        </div>
+                        <div class="problem-footer">
+                            <div class="difficulty-badge easy">Easy</div>
+                            <div class="domain-tags">
+                                <span class="tag">IoT Sensors</span>
+                                <span class="tag">Data Analytics</span>
+                                <span class="tag">Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <div class="problem-number">04</div>
+                            <div class="problem-category">Financial Inclusion</div>
+                        </div>
+                        <h3 class="problem-title">Digital Banking for Unbanked Communities</h3>
+                        <div class="problem-content">
+                            <div class="problem-section">
+                                <h4><i class="fas fa-info-circle"></i> Background</h4>
+                                <p>Millions of people in rural areas lack access to basic banking services due to
+                                    geographical and infrastructure constraints.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-question-circle"></i> Problem</h4>
+                                <p>How can we provide secure, accessible digital banking solutions for unbanked
+                                    populations?</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-target"></i> Expected Outcome</h4>
+                                <p>A mobile-first banking platform with offline capabilities, biometric authentication,
+                                    and multilingual support.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-chart-line"></i> Impact</h4>
+                                <p>Promotes financial inclusion, enables economic growth, and empowers underserved
+                                    communities.</p>
+                            </div>
+                        </div>
+                        <div class="problem-footer">
+                            <div class="difficulty-badge medium">Medium</div>
+                            <div class="domain-tags">
+                                <span class="tag">Fintech</span>
+                                <span class="tag">Security</span>
+                                <span class="tag">Mobile App</span>
                             </div>
                         </div>
                     </div>
@@ -328,21 +491,23 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <span>+7052921027</span>
+                        <span>+91 7052921027</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Newton School of Technology, Ajeekya D Y Patil University</span>
+                        <span>Newton School of Technology, Ajeekya D Y Patil University, Pune, India</span>
                     </div>
                 </div>
                 <div class="social-links">
                     <h3>Follow Us</h3>
                     <div class="social-icons">
-                        
-                        
-                        <a href="https://www.instagram.com/setu_nst/" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/108077837/admin/dashboard/" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                        
+
+
+                        <a href="https://www.instagram.com/setu_nst/" class="social-icon"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/108077837/admin/dashboard/" class="social-icon"><i
+                                class="fab fa-linkedin"></i></a>
+
                     </div>
                 </div>
             </div>
@@ -372,5 +537,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="debug.js"></script>
 </body>
+
 </html>

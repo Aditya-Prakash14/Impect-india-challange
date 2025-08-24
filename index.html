@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impact India Challenge - One Week. One Problem. One Impact.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -21,12 +25,12 @@
             <div class="nav-menu" id="navMenu">
                 <a href="#hero" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
-                
+
                 <a href="#rules" class="nav-link">Rules</a>
                 <a href="#problems" class="nav-link">Problems</a>
-                
+
                 <a href="register.html" class="nav-link">Register</a>
-                
+
             </div>
             <div class="nav-toggle" id="navToggle">
                 <span class="bar"></span>
@@ -51,7 +55,7 @@
             </div>
         </div>
         <div class="hero-overlay"></div>
-        
+
         <!-- Hero Content Container -->
         <div class="hero-container">
             <div class="hero-content">
@@ -69,30 +73,33 @@
                     <span class="tagline-word">One Impact.</span>
                 </p>
                 <p class="hero-description">
-                    Join India's most innovative problem-solving challenge where brilliant minds come together to create real-world solutions that matter
+                    Join India's most innovative problem-solving challenge where brilliant minds come together to create
+                    real-world solutions that matter
                 </p>
-                
+
                 <!-- CTA Buttons -->
                 <div class="hero-cta-group">
                     <button class="cta-button primary" onclick="window.location.href='register.html'">
                         <span>Register Now</span>
                         <i class="fas fa-rocket"></i>
                     </button>
-                    <button class="cta-button secondary" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+                    <button class="cta-button secondary"
+                        onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
                         <span>Learn More</span>
                         <i class="fas fa-arrow-down"></i>
                     </button>
                 </div>
             </div>
-            
+
             <!-- Hero Visual Elements -->
             <div class="hero-visual">
                 <div class="hero-image-container">
-                    <img src="myScheme-565x495-New.png" alt="Impact India Challenge - Innovation and Technology" class="hero-image">
+                    <img src="myScheme-565x495-New.png" alt="Impact India Challenge - Innovation and Technology"
+                        class="hero-image">
                 </div>
             </div>
-        </div> 
-        
+        </div>
+
         <!-- Scroll Indicator -->
         <div class="scroll-indicator">
             <div class="scroll-arrow">
@@ -112,7 +119,9 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Transform Ideas into Impact</h3>
-                    <p>Impact India Challenge is a week-long innovation marathon designed to harness the creative potential of India's youth. Participants work in teams to identify, analyze, and develop solutions for pressing societal challenges.</p>
+                    <p>Impact India Challenge is a week-long innovation marathon designed to harness the creative
+                        potential of India's youth. Participants work in teams to identify, analyze, and develop
+                        solutions for pressing societal challenges.</p>
                 </div>
                 <div class="about-illustration">
                     <div class="illustration-card">
@@ -238,7 +247,7 @@
                 <p>Real challenges. Real solutions. Real impact.</p>
             </div>
             <div class="problems-container">
-                <div class="coming-soon-overlay">
+                <div class="coming-soon-overlay" id="comingSoonOverlay">
                     <div class="coming-soon-content">
                         <i class="fas fa-lock"></i>
                         <h3>Coming Soon</h3>
@@ -259,6 +268,314 @@
                             <div class="countdown-item">
                                 <span id="seconds">00</span>
                                 <label>Seconds</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem Statements Grid (initially hidden) -->
+                <div class="problem-statements-grid" id="problemStatementsGrid" style="display: none;">
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <div class="problem-number">01</div>
+                            <div class="problem-category">Accessibility Technology</div>
+                        </div>
+                        <h3 class="problem-title">Indian Sign Language to Text/Speech Translation</h3>
+                        <div class="problem-content">
+                            <div class="problem-section">
+                                <h4><i class="fas fa-info-circle"></i> Background</h4>
+                                <p>Deaf and Hard-of-Hearing communities in India face communication barriers in
+                                    education, healthcare, and public services.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-question-circle"></i> Problem</h4>
+                                <p>Develop a solution that can translate Indian Sign Language (ISL) into real-time text
+                                    and speech output.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-target"></i> Expected Outcome</h4>
+                                <p>A user-friendly application (mobile/web) that enables seamless communication between
+                                    the Deaf and Hard-of-Hearing community and the hearing population.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-chart-line"></i> Impact</h4>
+                                <p>This solution will empower millions of Indians with hearing disabilities, ensuring
+                                    equal opportunities, accessibility, and social inclusion.</p>
+                            </div>
+                        </div>
+                        <div class="problem-footer">
+                            <div class="difficulty-badge hard">Hard</div>
+                            <div class="domain-tags">
+                                <span class="tag">Computer Vision</span>
+                                <span class="tag">AI/ML</span>
+                                <span class="tag">Accessibility</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <div class="problem-number">02</div>
+                            <div class="problem-category">Education Technology</div>
+                        </div>
+                        <h3 class="problem-title">Enhancing Education Access and Quality</h3>
+                        <div class="problem-content">
+                            <div class="problem-section">
+                                <h4><i class="fas fa-info-circle"></i> Background</h4>
+                                <p>Despite the rapid growth of digital technologies, a significant portion of students
+                                    across rural and semi-urban areas face challenges in accessing quality education.
+                                </p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-question-circle"></i> Problem</h4>
+                                <p>How can we leverage technology to bridge the educational divide by making quality
+                                    learning accessible, inclusive, and engaging?</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-target"></i> Expected Outcome</h4>
+                                <p>A solution that provides accessible learning for students across different regions,
+                                    backgrounds, and learning abilities.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-chart-line"></i> Impact</h4>
+                                <p>Reduces learning gaps across socioeconomic divides and improves educational outcomes.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="problem-footer">
+                            <div class="difficulty-badge medium">Medium</div>
+                            <div class="domain-tags">
+                                <span class="tag">EdTech</span>
+                                <span class="tag">Web/Mobile</span>
+                                <span class="tag">UX Design</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <div class="problem-number">03</div>
+                            <div class="problem-category">Agriculture Tech</div>
+                        </div>
+                        <h3 class="problem-title">Mobile App for Direct Market Access for Farmers</h3>
+                        <div class="problem-content">
+                            <div class="problem-section">
+                                <h4><i class="fas fa-info-circle"></i> Background</h4>
+                                <p>Farmers in India face challenges in accessing real-time and reliable market
+                                    information, often relying on intermediaries which reduces profit margins.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-question-circle"></i> Problem</h4>
+                                <p>How can farmers get direct market access with daily updates and data-driven crop
+                                    segregation information?</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-target"></i> Expected Outcome</h4>
+                                <p>A digital solution that provides farmers with direct access to market platforms,
+                                    ensuring transparency in pricing and enabling data-driven decisions.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-chart-line"></i> Impact</h4>
+                                <p>Increases farmer income, reduces dependence on intermediaries, and enables better
+                                    agricultural decisions.</p>
+                            </div>
+                        </div>
+                        <div class="problem-footer">
+                            <div class="difficulty-badge medium">Medium</div>
+                            <div class="domain-tags">
+                                <span class="tag">Mobile App</span>
+                                <span class="tag">Data Analytics</span>
+                                <span class="tag">AgriTech</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <div class="problem-number">04</div>
+                            <div class="problem-category">Healthcare Innovation</div>
+                        </div>
+                        <h3 class="problem-title">Predictive Model for Patient Deterioration</h3>
+                        <div class="problem-content">
+                            <div class="problem-section">
+                                <h4><i class="fas fa-info-circle"></i> Background</h4>
+                                <p>In India's overcrowded hospitals, timely detection of patient deterioration is a
+                                    major challenge due to limited staff and high patient loads.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-question-circle"></i> Problem</h4>
+                                <p>How can technology assist healthcare providers in predicting patient deterioration in
+                                    real-time, ensuring timely intervention?</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-target"></i> Expected Outcome</h4>
+                                <p>A predictive system that identifies early warning signs of conditions like sepsis,
+                                    cardiac arrest, and multi-organ failure.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-chart-line"></i> Impact</h4>
+                                <p>Reduces preventable deaths through early detection and intervention in critical care
+                                    situations.</p>
+                            </div>
+                        </div>
+                        <div class="problem-footer">
+                            <div class="difficulty-badge hard">Hard</div>
+                            <div class="domain-tags">
+                                <span class="tag">Healthcare</span>
+                                <span class="tag">ML/AI</span>
+                                <span class="tag">Data Science</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Adding the remaining 4 problem statements -->
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <div class="problem-number">05</div>
+                            <div class="problem-category">Education Technology</div>
+                        </div>
+                        <h3 class="problem-title">Smart Scholarship Navigator for Underprivileged Students</h3>
+                        <div class="problem-content">
+                            <div class="problem-section">
+                                <h4><i class="fas fa-info-circle"></i> Background</h4>
+                                <p>Many rural and underprivileged students miss out on scholarships due to poor
+                                    awareness and complex procedures.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-question-circle"></i> Problem</h4>
+                                <p>How can students easily discover and apply for government/private scholarships
+                                    relevant to their profiles?</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-target"></i> Expected Outcome</h4>
+                                <p>An AI-powered scholarship portal that matches student profiles with available
+                                    scholarships and guides step-by-step application in regional languages.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-chart-line"></i> Impact</h4>
+                                <p>Boosts education access, minimizes dropouts, and supports talent in rural areas.</p>
+                            </div>
+                        </div>
+                        <div class="problem-footer">
+                            <div class="difficulty-badge medium">Medium</div>
+                            <div class="domain-tags">
+                                <span class="tag">AI/ML</span>
+                                <span class="tag">Web Dev</span>
+                                <span class="tag">Education</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <div class="problem-number">06</div>
+                            <div class="problem-category">Accessibility</div>
+                        </div>
+                        <h3 class="problem-title">Assistive Technology for Visually Impaired Students</h3>
+                        <div class="problem-content">
+                            <div class="problem-section">
+                                <h4><i class="fas fa-info-circle"></i> Background</h4>
+                                <p>Blind and visually impaired students face challenges in accessing books, notes, and
+                                    exams due to unavailability of inclusive tools.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-question-circle"></i> Problem</h4>
+                                <p>How can we use technology to make study material and examinations accessible to
+                                    visually impaired students?</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-target"></i> Expected Outcome</h4>
+                                <p>An AI tool that converts text to audio, Braille, or haptic feedback and enables a
+                                    secure speech-to-text exam system.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-chart-line"></i> Impact</h4>
+                                <p>Equal education opportunities for visually impaired learners, reducing dependency on
+                                    scribes.</p>
+                            </div>
+                        </div>
+                        <div class="problem-footer">
+                            <div class="difficulty-badge hard">Hard</div>
+                            <div class="domain-tags">
+                                <span class="tag">Accessibility</span>
+                                <span class="tag">AI/ML</span>
+                                <span class="tag">Education</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <div class="problem-number">07</div>
+                            <div class="problem-category">Rural Commerce</div>
+                        </div>
+                        <h3 class="problem-title">Digital Marketplace for Rural Artisans</h3>
+                        <div class="problem-content">
+                            <div class="problem-section">
+                                <h4><i class="fas fa-info-circle"></i> Background</h4>
+                                <p>Rural artisans are unable to reach wider markets and get fair prices for their
+                                    crafts.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-question-circle"></i> Problem</h4>
+                                <p>How can artisans promote and sell products online without technical barriers?</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-target"></i> Expected Outcome</h4>
+                                <p>A simple, multilingual web platform where artisans can list, advertise, and sell
+                                    their work directly to consumers, with integrated payment solutions and AI-powered
+                                    marketing tools.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-chart-line"></i> Impact</h4>
+                                <p>Expands earning opportunities, preserves traditional arts, and enables economic
+                                    empowerment.</p>
+                            </div>
+                        </div>
+                        <div class="problem-footer">
+                            <div class="difficulty-badge medium">Medium</div>
+                            <div class="domain-tags">
+                                <span class="tag">E-commerce</span>
+                                <span class="tag">Web Dev</span>
+                                <span class="tag">Rural Tech</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-header">
+                            <div class="problem-number">08</div>
+                            <div class="problem-category">e-Governance</div>
+                        </div>
+                        <h3 class="problem-title">Rural e-Governance Service Navigator</h3>
+                        <div class="problem-content">
+                            <div class="problem-section">
+                                <h4><i class="fas fa-info-circle"></i> Background</h4>
+                                <p>Villagers often remain unaware of government welfare schemes or find it difficult to
+                                    apply due to complex procedures.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-question-circle"></i> Problem</h4>
+                                <p>How can we provide rural citizens easy access to scheme information, eligibility
+                                    checks, and application assistance in local languages?</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-target"></i> Expected Outcome</h4>
+                                <p>A multilingual AI chatbot/web app that explains schemes, checks eligibility, and
+                                    helps in filling and tracking applications.</p>
+                            </div>
+                            <div class="problem-section">
+                                <h4><i class="fas fa-chart-line"></i> Impact</h4>
+                                <p>This will increase awareness, reduce middlemen exploitation, and ensure government
+                                    benefits reach the grassroots level.</p>
+                            </div>
+                        </div>
+                        <div class="problem-footer">
+                            <div class="difficulty-badge medium">Medium</div>
+                            <div class="domain-tags">
+                                <span class="tag">NLP</span>
+                                <span class="tag">AI/ML</span>
+                                <span class="tag">Governance</span>
                             </div>
                         </div>
                     </div>
@@ -328,21 +645,23 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <span>+7052921027</span>
+                        <span>+91 7052921027</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Newton School of Technology, Ajeekya D Y Patil University</span>
+                        <span>Newton School of Technology, Ajeekya D Y Patil University, Pune, India</span>
                     </div>
                 </div>
                 <div class="social-links">
                     <h3>Follow Us</h3>
                     <div class="social-icons">
-                        
-                        
-                        <a href="https://www.instagram.com/setu_nst/" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/108077837/admin/dashboard/" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                        
+
+
+                        <a href="https://www.instagram.com/setu_nst/" class="social-icon"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/108077837/admin/dashboard/" class="social-icon"><i
+                                class="fab fa-linkedin"></i></a>
+
                     </div>
                 </div>
             </div>
@@ -372,5 +691,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="debug.js"></script>
 </body>
+
 </html>

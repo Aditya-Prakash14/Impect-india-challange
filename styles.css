@@ -28,6 +28,9 @@ body {
 :root {
     --primary-color: #FF9933;
     --secondary-color: #138808;
+    --saffron: #FF9933;
+    --green: #138808;
+    --royal-blue: #003399;
     --accent-color: #003399;
     --background-color: #fafafa;
     --text-dark: #2d3748;
@@ -127,6 +130,33 @@ body {
 
 .nav-link:hover::after {
     width: 100%;
+}
+
+/* Download Button Styles */
+.nav-link.download-btn {
+    background-color: var(--saffron);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link.download-btn:hover {
+    background-color: var(--green);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link.download-btn::after {
+    display: none;
+}
+
+.nav-link.download-btn i {
+    font-size: 0.9rem;
 }
 
 .nav-toggle {
@@ -484,6 +514,39 @@ body {
     color: var(--text-light);
     font-weight: 400;
     letter-spacing: -0.01em;
+}
+
+.section-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.action-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.action-button.download-btn {
+    background-color: var(--saffron);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.action-button.download-btn:hover {
+    background-color: var(--green);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* About Section */

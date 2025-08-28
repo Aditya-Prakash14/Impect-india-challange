@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Project - Impact India Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Submission Page Specific Styles */
+        .submit-hero {
+            position: relative;
+            background: linear-gradient(135deg, #003399 0%, #138808 100%);
+            color: white;
+            padding: 60px 0;
+            margin-top: 120px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .submit-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSI1MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cmVjdCBmaWxsPSIjMDAzMzk5IiB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSI1MDAiLz48Y2lyY2xlIHN0cm9rZT0iI0ZGOTkzMyIgc3Ryb2tlLXdpZHRoPSIyIiBjeD0iNDAzLjUiIGN5PSIzMTIuNSIgcj0iMTIwLjUiIG9wYWNpdHk9Ii4yIi8+PGNpcmNsZSBzdHJva2U9IiNGRjk5MzMiIHN0cm9rZS13aWR0aD0iMiIgY3g9IjEwNDAuNSIgY3k9IjE5Mi41IiByPSI4OC41IiBvcGFjaXR5PSIuMiIvPjxjaXJjbGUgc3Ryb2tlPSIjRkY5OTMzIiBzdHJva2Utd2lkdGg9IjIiIGN4PSI3MjMuNSIgY3k9IjQ1My41IiByPSI1OS41IiBvcGFjaXR5PSIuMiIvPjxjaXJjbGUgZmlsbD0iI0ZGOTkzMyIgY3g9IjI5MiIgY3k9IjE1MyIgcj0iMTIiIG9wYWNpdHk9Ii4zIi8+PGNpcmNsZSBmaWxsPSIjRkY5OTMzIiBjeD0iNjUwIiBjeT0iMTMwIiByPSI4IiBvcGFjaXR5PSIuMyIvPjxjaXJjbGUgZmlsbD0iI0ZGOTkzMyIgY3g9IjExMzAiIGN5PSIzOTAiIHI9IjE1IiBvcGFjaXR5PSIuMyIvPjwvZz48L3N2Zz4=') center/cover;
+            opacity: 0.8;
+            z-index: 0;
+        }
+
+        .submit-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .submit-hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .submit-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
+        .form-container {
+            padding: 60px 0;
+            background-color: #fafafa;
+        }
+
+        .embed-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            height: 0;
+            padding-bottom: 150%;
+            /* Adjust this value based on your form's height */
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .submission-instructions {
+            max-width: 800px;
+            margin: 0 auto;
+            margin-bottom: 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .instruction-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .step-icon {
+            background: var(--saffron);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            color: white;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .submission-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .download-template {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--green);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(19, 136, 8, 0.2);
+        }
+
+        .download-template:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(19, 136, 8, 0.25);
+        }
+
+        .download-template i {
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .submit-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .embed-container {
+                padding-bottom: 200%;
+                /* Adjust for mobile */
+            }
+
+            .submission-instructions {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="iis.png" alt="Impact India Challenge Logo" class="logo-image">
+                <h2>Impact India Challenge</h2>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#rules" class="nav-link">Rules</a>
+                <a href="index.html#problems" class="nav-link">Problems</a>
+                <a href="register.html" class="nav-link">Register</a>
+                <a href="submission.html" class="nav-link active">Submit</a>
+                <a href="Sample_PPT.pptx" class="nav-link download-btn" download><i class="fas fa-download"></i> Sample
+                    PPT</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Submission Hero -->
+    <section class="submit-hero">
+        <div class="container">
+            <div class="submit-hero-content">
+                <h1>Submit Your Project</h1>
+                <p>Share your innovative solution to one of India's pressing challenges. Complete the form below to
+                    submit your project for evaluation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Submission Instructions -->
+    <section class="form-container">
+        <div class="container">
+            <div class="submission-instructions">
+                <h2>Submission Guidelines</h2>
+                <p>Follow these steps to ensure your submission is complete and properly evaluated:</p>
+
+                <div class="instruction-step">
+                    <div class="step-icon">
+                        <i class="fas fa-file-powerpoint"></i>
+                    </div>
+                    <div class="step-content">
+                        <h4>Prepare Your Presentation</h4>
+                        <p>Create a PowerPoint presentation following the template format. Your presentation should
+                            clearly explain your solution, implementation details, and expected impact.</p>
+                    </div>
+                </div>
+                <div class="instruction-step">
+                    <div class="step-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="step-content">
+                        <h4>Complete All Form Fields</h4>
+                        <p>Ensure all required fields in the submission form are completed. Incomplete submissions may
+                            not be considered for evaluation.</p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Google Form Embed -->
+            <div class="embed-container">
+                <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSd3wztH0cLFeSBusJmzmE33pnZCbu7q0Vg1YxPEi_eSCwVTkw/viewform?embedded=true"
+                    width="640" height="200" frameborder="0" marginheight="0" marginwidth="0">
+                    Loading…
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Impact India Challenge</h3>
+                    <p>One Week. One Problem. One Impact.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#rules">Rules</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Impact India Challenge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', function () {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
